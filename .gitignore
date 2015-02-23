@@ -1,0 +1,18 @@
+# OS-specific files.
+# Don't commit the files your environment creates for development to any
+# repository!
+**/.DS_Store
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Ignore SSH keys.  Don't commit your keys to the repository!
+provisioning/ssh
+
+# Ignore the directory where code is stored.  This should not be committed to
+# the Vagrant repository!
+# dev/
+
+# Don't commit the Vagrant metadata directory.
+.vagrant/
+
