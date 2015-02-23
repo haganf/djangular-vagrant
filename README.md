@@ -34,6 +34,8 @@ The provisioning process expects a pair of SSH keys in `provisioning/ssh` named 
 Usage
 -----
 
+Make sure you run Vagrant commands from the directory containing the Vagrantfile.
+
     vagrant up && vagrant ssh
 
 FAQ
