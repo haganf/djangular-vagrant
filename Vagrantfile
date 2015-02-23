@@ -15,16 +15,13 @@ Vagrant.configure(2) do |config|
   # bootstrap.sh provisioning script.
   config.vm.network "forwarded_port", guest: 8000, host: 8000
 
-  # These folders are all synchronized to the VM from
-  #     "host dir (relative), guest dir (absolute)"
-  config.vm "synced_folder" do |sync|
+  # Synchronized folders:
 
-    # A directory for projects.
-    config.vm.synced_folder "dev", "/home/vagrant/dev"
+  # A directory for projects.
+  config.vm.synced_folder "dev", "/home/vagrant/dev"
 
-    # A directory for other code libraries.
-    config.vm.synced_folder "lib", "/home/vagrant/lib"
-  end
+  # A directory for other code libraries.
+  config.vm.synced_folder "lib", "/home/vagrant/lib"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
