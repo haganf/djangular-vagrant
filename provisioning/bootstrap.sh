@@ -5,7 +5,7 @@
 sudo apt-get update
 
 # Install system packages.
-sudo apt-get install -y apache2 git python2.7-dev
+sudo apt-get install -y apache2 git python2.7-dev libbq-dev
 
 # TODO: Create an Apache config template and move it to the correct place.
 #     This template should contain routing for static and media directories
