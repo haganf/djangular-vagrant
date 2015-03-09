@@ -8,11 +8,11 @@
 
 # Ignore SSH keys.  Don't commit your keys to the repository!
 provisioning/ssh
-
 # Ignore the directory where code is stored.  This should not be committed to
 # the Vagrant repository!
 dev/
-
 # Don't commit the Vagrant metadata directory.
 .vagrant/
-
+/cookbooks/
+/tmp/librarian/
+/tmp
