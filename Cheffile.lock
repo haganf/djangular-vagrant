@@ -51,7 +51,7 @@ SITE
       erlang (>= 0.9)
       yum-epel (>= 0.0.0)
       yum-erlang_solutions (>= 0.0.0)
-    runit (1.5.16)
+    runit (1.5.18)
       build-essential (>= 0.0.0)
       yum (~> 3.0)
       yum-epel (>= 0.0.0)

@@ -60,3 +60,37 @@ Keep in mind that you are running a headless Ubuntu server from your host machin
 4. If 3. didn't solve your problem, try `vagrant destroy && vagrant up` from your host machine to rebuild the VM.  You will need to reconfigure any global project settings after this step.
 
 Still having a problem?  [Log an issue](http://github.com/colinsf/djangular-vagrant/issues/new)!  :smirk_cat:
+
+
+
+
+TODO:
+Install git-flow
+
+get setup:
+
+git config --global push.default simple
+git config --global user.email "franks@email.arizona.edu"
+git config --global user.name "Hagan Franks"
+
+::on a project::
+git push --set-upstream origin develop
+
+::need .profile added::
+export WORKON_HOME=~/.virtualenvs
+. /usr/local/bin/virtualenvwrapper.sh
+
+FIX our local id_rsa.pub -> authorized_keys
+
+look at linking all /home/vagrant/dev/**/envs/* -> .virtualenvs/
+setup .pgpass for postgres user?!?
+## npm install -g jspm jspm-git gulp
+jspm endpoint create bitbucket jspm-git
+    ssh://git@bitbucket.org/
+SETUP github token
+jspm init
+ACTIVATE SSH AGENT BEFORE jspm install!!!
+jspm install
+gulp
+
+

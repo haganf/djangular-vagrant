@@ -21,10 +21,10 @@ Vagrant.configure(2) do |config|
   # Synchronized folders:
 
   # A directory for projects.
-  config.vm.synced_folder "dev", "/home/vagrant/dev"
+  config.vm.synced_folder "dev", "/home/vagrant/dev", type: "rsync", rsync__args: ["--verbose", "--archive", "--delete", "-z"]
 
   # A directory for other code libraries.
-  config.vm.synced_folder "lib", "/home/vagrant/lib"
+  config.vm.synced_folder "lib", "/home/vagrant/lib", type: "rsync", rsync__args: ["--verbose", "--archive", "--delete", "-z"]
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

@@ -2,7 +2,7 @@
 
 # Always make sure we have the most up-to-date packages before installing
 # anything.
-# sudo apt-get update
+sudo apt-get update
 
 # Install system packages.
 # sudo apt-get install -y apache2 git python2.7-dev
