@@ -21,10 +21,12 @@ Vagrant.configure(2) do |config|
   # Synchronized folders:
 
   # A directory for projects.
-  config.vm.synced_folder "dev", "/home/vagrant/dev", type: "rsync", rsync__args: ["--verbose", "--archive", "--delete", "-z"]
+  config.vm.synced_folder "dev", "/home/vagrant/dev"
+  ##, type: "rsync", rsync__args: ["--verbose", "--archive", "--delete", "-z"]
 
   # A directory for other code libraries.
-  config.vm.synced_folder "lib", "/home/vagrant/lib", type: "rsync", rsync__args: ["--verbose", "--archive", "--delete", "-z"]
+  config.vm.synced_folder "lib", "/home/vagrant/lib"
+  ##, type: "rsync", rsync__args: ["--verbose", "--archive", "--delete", "-z"]
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -49,6 +51,8 @@ Vagrant.configure(2) do |config|
   #     http://docs.vagrantup.com/v2/provisioning/index.html
 
   config.vm.provision "chef_solo" do |chef|
+    chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
+
     chef.add_recipe "apache2"
     chef.add_recipe "postgresql::server"
     # chef.add_recipe "rabbitmq"
@@ -58,6 +62,7 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "virtualenvwrapper"
     chef.add_recipe "zsh"
     chef.add_recipe "vim"
+    chef.add_recipe "git-flow"
     chef.node_name = "vagrant1"
 
     chef.json = {

@@ -65,6 +65,8 @@ Still having a problem?  [Log an issue](http://github.com/colinsf/djangular-vagr
 
 
 TODO:
+script to remove /home/vagrant/.virtualenvs/*/var/virtualenv-status
+
 Install git-flow
 
 get setup:
