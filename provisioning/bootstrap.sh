@@ -2,7 +2,7 @@
 
 # Always make sure we have the most up-to-date packages before installing
 # anything.
-sudo apt-get update
+# sudo apt-get update
 
 # Install system packages.
 # sudo apt-get install -y apache2 git python2.7-dev
@@ -51,6 +51,12 @@ else
     echo >&2 "ERROR: Missing id_rsa or id_rsa.pub in provisioning/ssh/ dir.";
     echo >&2 "Run `vagrant provision` after you have resolved the issue.";
     exit 1;
+fi
+
+# Setup the authorized_keys
+if [ -f $PROV_ROOT/ssh/host_id_rsa.pub ]; then
+    echo >&2 "Moving localhost_id_rsa.pub into ~/.ssh/authorized_keys"
+    cat $PROV_ROOT/ssh/localhost_id_rsa.pub >> $HOME_DIR/.ssh/authorized_keys
 fi
 
 # Copy our custom .bash_aliases file & correct file ownership.
