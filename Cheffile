@@ -3,7 +3,14 @@
 
 site 'https://supermarket.chef.io/api/v1'
 
+cookbook 'nvm'
+cookbook 'nodejs'
+cookbook 'python'
+cookbook 'virtualenvwrapper'
 cookbook 'postgresql'
+cookbook 'rabbitmq'
 cookbook 'openssh'
 cookbook 'build-essential'
 cookbook 'apache2'
+cookbook 'zsh'
+cookbook 'vim'

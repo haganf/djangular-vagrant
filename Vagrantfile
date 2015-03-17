@@ -14,6 +14,9 @@ Vagrant.configure(2) do |config|
   # executed.  This command is aliased to `webserver` in the included
   # bootstrap.sh provisioning script.
   config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 5432, host: 5432
+
+  config.vm.network "private_network", ip: "192.168.100.2"
 
   # Synchronized folders:
 
@@ -27,13 +30,10 @@ Vagrant.configure(2) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.memory = "1024"
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -47,4 +47,35 @@ Vagrant.configure(2) do |config|
   # about their specific syntax and use:
   #
   #     http://docs.vagrantup.com/v2/provisioning/index.html
+
+  config.vm.provision "chef_solo" do |chef|
+    chef.add_recipe "apache2"
+    chef.add_recipe "postgresql::server"
+    # chef.add_recipe "rabbitmq"
+    chef.add_recipe "nvm"
+    chef.add_recipe "nodejs::nodejs_from_package"
+    chef.add_recipe "python"
+    chef.add_recipe "virtualenvwrapper"
+    chef.add_recipe "zsh"
+    chef.add_recipe "vim"
+    chef.node_name = "vagrant1"
+
+    chef.json = {
+      "apache2" => {
+        "listen_address" => "192.168.100.2"
+      },
+      "postgresql" => {
+        "password" => {
+          "postgres" => "notverysecure"
+        },
+        "config" => {
+          "listen_addresses" => "localhost",
+          "port" => 5432,
+          # "log_statement" => "all"
+          # "log_min_error_statement" => "error"
+        }
+      }
+    }
+  end
+
 end
