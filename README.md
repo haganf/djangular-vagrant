@@ -82,10 +82,24 @@ git push --set-upstream origin develop
 export WORKON_HOME=~/.virtualenvs
 . /usr/local/bin/virtualenvwrapper.sh
 
+exit script to deactivate bash or zsh!
+
 FIX our local id_rsa.pub -> authorized_keys
 
 look at linking all /home/vagrant/dev/**/envs/* -> .virtualenvs/
+
+for i in $(ls -d ~/dev/*/envs/*); do
+  j=$(basename $i)
+  echo "linking: $i -> ~/.virtualenvs/$j"
+  ln -s $i -t ~/.virtualenvs $j
+done
+
+
 setup .pgpass for postgres user?!?
+echo "localhost:5432:*:postgres:notverysecure" > ~/.pgpass
+chmod 600 ~/.pgpass
+
+
 ## npm install -g jspm jspm-git gulp
 jspm endpoint create bitbucket jspm-git
     ssh://git@bitbucket.org/
@@ -94,5 +108,10 @@ jspm init
 ACTIVATE SSH AGENT BEFORE jspm install!!!
 jspm install
 gulp
+
+WINDOWS ISSUES
+need to fix permissions on windows rsync'd folders
+  find /path/to/base/dir -type d -exec chmod 755 {} +
+  find /path/to/base/dir -type f -exec chmod 644 {} +
 
 
