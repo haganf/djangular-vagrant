@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 #^syntax detection
+require 'certified'
 
 site 'https://supermarket.chef.io/api/v1'
 
