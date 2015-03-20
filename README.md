@@ -65,6 +65,12 @@ Still having a problem?  [Log an issue](http://github.com/colinsf/djangular-vagr
 
 
 TODO:
+
+
+a) Use chocolatey as much as possible
+
+vagrant plugin install vagrant-vbguest
+
 script to remove /home/vagrant/.virtualenvs/*/var/virtualenv-status
 
 Install git-flow
