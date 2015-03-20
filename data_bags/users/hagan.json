@@ -1,0 +1,13 @@
+{
+  "id": "hagan",
+  "password": "$1$v0U0JGpT$eCAwMudsIKhkzicwjoA101",
+  "ssh_keys": [
+    "ssh-rsa AAA123...xyz== foo",
+    "ssh-rsa AAA456...uvw== bar"
+  ],
+  "groups": [ "admin", "staff", "www-data" ],
+  "uid": 2001,
+  "action": "create", // <--
+  "comment": "hagan's account",
+  "shell": "\/bin\/bash"
+}

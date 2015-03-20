@@ -59,5 +59,23 @@ if [ -f $PROV_ROOT/ssh/host_id_rsa.pub ]; then
     cat $PROV_ROOT/ssh/localhost_id_rsa.pub >> $HOME_DIR/.ssh/authorized_keys
 fi
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+#add virtualenvwrapper to /home/vagran/.profile
+#sudo -u vagrant 'cat $PROV_ROOT/bash_profile >> ~/.profile'
+# sudo -u vagrant 'echo "Configuring Git for Hagan"'
+# sudo -u vagrant 'git config --global push.default simple'
+# sudo -u vagrant 'git config --global user.email "franks@email.arizona.edu"'
+# sudo -u vagrant 'git config --global user.name "Hagan Franks"'
+
+# if [ -f $PROV_ROOT/personalize/git_config ]; then
+#     sudo -u vagrant $PROV_ROOT/personalize/git_config.sh
+# fi
+
 # Copy our custom .bash_aliases file & correct file ownership.
 # /bin/cp $PROV_ROOT/bash_aliases.sh $HOME_DIR/.bash_aliases

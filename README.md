@@ -62,9 +62,23 @@ Keep in mind that you are running a headless Ubuntu server from your host machin
 Still having a problem?  [Log an issue](http://github.com/colinsf/djangular-vagrant/issues/new)!  :smirk_cat:
 
 
-
-
 TODO:
+#knife on windows broken
+  gem install win32-process windows-pr
+
+  install chef-dk for windows
+
+IN POWERSHELL
+Check if we have a Profile:
+  Test-Path $Profile
+  New-Item -Path $Profile -Type File -Force
+  Notepad $profile (to edit it...)
+  #windows default policy is dumb for profile..
+  #Run powershell as admin:
+  Get-ExecutionPolicy -List
+  Set-ExecutionPolicy -Scope LocalMachine Unrestricted
+  #now profiles should work
+
 script to remove /home/vagrant/.virtualenvs/*/var/virtualenv-status
 
 Install git-flow
